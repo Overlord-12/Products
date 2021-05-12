@@ -1,0 +1,38 @@
+﻿<Window x:Class="Products.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Products"
+        xmlns:model="clr-namespace:Products.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="305" Closed="Window_Closed">
+    <Window.DataContext>
+        <model:Control></model:Control>
+    </Window.DataContext>
+    <Grid>
+        <TabControl  Height="400" Margin="0,10,5.2,0" VerticalAlignment="Top">
+            <TabItem Header="Добавление товара">
+                <Grid Background="White">
+                    <TextBox Text="{Binding Id}" x:Name="bxId" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                    <TextBox Text="{Binding Quantity}" x:Name="bxQuantity" HorizontalAlignment="Left" Height="23" Margin="10,101,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" />
+                    <TextBox Text="{Binding Desription}" x:Name="bxDescription" HorizontalAlignment="Left" Height="23" Margin="10,166,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Введите ШК" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" Width="92"/>
+                    <Label Content="Введите кол-во товара" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Width="139"/>
+                    <Label Content="Введите описание" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" Width="120"/>
+                    <Button Command="{Binding SaveClick}" Content="Сохранить" HorizontalAlignment="Left" Margin="55,256,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Просмотр товара">
+                <Grid Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid  x:Name="BaseGrid"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+
+    </Grid>
+</Window>

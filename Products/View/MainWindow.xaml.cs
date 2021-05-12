@@ -37,7 +37,7 @@ namespace Products
         {
             db.ProductTableSet.Add(new ProductTableSet()
             {
-                Quantity = bxDescription.Text,
+                Quantity = bxQuantity.Text,
                 Id = Convert.ToInt32(bxId.Text),
                 Description = bxDescription.Text
             });
